@@ -1,0 +1,362 @@
+[
+  {
+    "id": "email_01",
+    "sender": "Amazon Deals",
+    "senderEmail": "deals@demo.example",
+    "subject": "Your weekend deals just dropped",
+    "preview": "A fresh batch of home, tech and everyday finds. Take a peek at this week's top picks before Monday.",
+    "time": "10:42 AM",
+    "trueType": "newsletter"
+  },
+  {
+    "id": "email_02",
+    "sender": "Prize Patrol",
+    "senderEmail": "winner@demo.example",
+    "subject": "You've won a mystery reward!",
+    "preview": "Claim a surprise reward now. This unsolicited message contains promotional links with immediate action required.",
+    "time": "10:45 AM",
+    "trueType": "spam"
+  },
+  {
+    "id": "email_03",
+    "sender": "Maya at Orbit Studio",
+    "senderEmail": "maya@demo.example",
+    "subject": "Interview confirmation & portfolio review",
+    "preview": "Looking forward to speaking tomorrow at 2 PM PST. Please have your Figma design case studies ready for review.",
+    "time": "10:48 AM",
+    "trueType": "important"
+  },
+  {
+    "id": "email_04",
+    "sender": "Cloudnote Billing",
+    "senderEmail": "billing@demo.example",
+    "subject": "Receipt for your October plan ($12.00)",
+    "preview": "Payment received: $12.00. Your October Pro subscription is all set. Your invoice is attached for your tax records.",
+    "time": "10:51 AM",
+    "trueType": "receipt"
+  },
+  {
+    "id": "email_05",
+    "sender": "Jamie Chen",
+    "senderEmail": "jamie.chen@demo.example",
+    "subject": "Quick check-in: Can you send the deck by Thursday?",
+    "preview": "Hey, need the finalized slides before our client briefing. Let me know if you need help with the financials slide.",
+    "time": "10:55 AM",
+    "trueType": "needs_reply"
+  },
+  {
+    "id": "email_06",
+    "sender": "Substack Weekly Digest",
+    "senderEmail": "digest@demo.example",
+    "subject": "The Future of AI Hardware & Web Agents",
+    "preview": "Top 5 essays read by engineers this week: neural network optimization, agentic workflows, and local LLMs.",
+    "time": "11:02 AM",
+    "trueType": "newsletter"
+  },
+  {
+    "id": "email_07",
+    "sender": "Crypto Fortune Bot",
+    "senderEmail": "alert@demo.example",
+    "subject": "Exclusive 500% ROI Token Airdrop Claim",
+    "preview": "Urgent notification: Your address was selected for tier 1 staking allocation. Connect wallet in 24 hours.",
+    "time": "11:05 AM",
+    "trueType": "spam"
+  },
+  {
+    "id": "email_08",
+    "sender": "Dr. Sarah Lin (Clinic)",
+    "senderEmail": "appointments@demo.example",
+    "subject": "Appointment Confirmation: Annual Health Checkup",
+    "preview": "Confirmed for Monday Nov 3 at 9:00 AM. Please arrive 15 minutes early with your medical insurance card.",
+    "time": "11:10 AM",
+    "trueType": "important"
+  },
+  {
+    "id": "email_09",
+    "sender": "Uber Receipts",
+    "senderEmail": "receipts@demo.example",
+    "subject": "Your Wednesday morning trip with Uber ($24.80)",
+    "preview": "Thanks for riding with Uber. Total: $24.80 billed to Visa ending in 4128. Download your full receipt.",
+    "time": "11:15 AM",
+    "trueType": "receipt"
+  },
+  {
+    "id": "email_10",
+    "sender": "Marcus Vance",
+    "senderEmail": "marcus@demo.example",
+    "subject": "Feedback on contract draft v2",
+    "preview": "Reviewed the IP clause in section 4. Left 3 comments on DocuSign. Can you review and approve today?",
+    "time": "11:22 AM",
+    "trueType": "needs_reply"
+  },
+  {
+    "id": "email_11",
+    "sender": "Morning Brew",
+    "senderEmail": "crew@demo.example",
+    "subject": "Markets rally as chip demand surges",
+    "preview": "Good morning. Here is what you need to know today: tech earnings, central bank rates, and coffee commodities.",
+    "time": "11:30 AM",
+    "trueType": "newsletter"
+  },
+  {
+    "id": "email_12",
+    "sender": "Quick Loans Direct",
+    "senderEmail": "approval@demo.example",
+    "subject": "Pre-approved: $25,000 unsecured cash loan",
+    "preview": "Zero credit checks required! Sign now for instant transfer into your bank within 10 minutes.",
+    "time": "11:34 AM",
+    "trueType": "spam"
+  },
+  {
+    "id": "email_13",
+    "sender": "GitHub Security",
+    "senderEmail": "security@demo.example",
+    "subject": "[Urgent] Personal Access Token expiration in 48 hours",
+    "preview": "Your token 'deploy-prod-key' with repo scope will expire soon. Regenerate it to avoid CI/CD pipeline breakage.",
+    "time": "11:40 AM",
+    "trueType": "important"
+  },
+  {
+    "id": "email_14",
+    "sender": "Cloud Hosting Billing",
+    "senderEmail": "billing@demo.example",
+    "subject": "Invoice due: Vercel Pro Hosting - $20.00",
+    "preview": "Payment due by November 5. Please review your invoice and payment method to avoid interruption.",
+    "time": "11:45 AM",
+    "trueType": "receipt"
+  },
+  {
+    "id": "email_15",
+    "sender": "Elena Rostova",
+    "senderEmail": "elena.r@demo.example",
+    "subject": "Are we still meeting for lunch at 1 PM?",
+    "preview": "Table is booked at Bistro Luna. Let me know if you are running late or need to reschedule for tomorrow.",
+    "time": "11:50 AM",
+    "trueType": "needs_reply"
+  },
+  {
+    "id": "email_16",
+    "sender": "Product Hunt Daily",
+    "senderEmail": "hello@demo.example",
+    "subject": "Top 10 AI productivity tools launched today",
+    "preview": "Meet the best new products: AI voice agents, visual SQL builders, and an arcade email cleaner.",
+    "time": "12:05 PM",
+    "trueType": "newsletter"
+  },
+  {
+    "id": "email_17",
+    "sender": "Ray-Ban Outlet Club",
+    "senderEmail": "vip@demo.example",
+    "subject": "90% OFF clearance sunglasses sale ends tonight!",
+    "preview": "Warehouse liquidation sale! Designer frames starting from $19. Limited stock available for first 100 visitors.",
+    "time": "12:12 PM",
+    "trueType": "spam"
+  },
+  {
+    "id": "email_18",
+    "sender": "Chase Bank Alerts",
+    "senderEmail": "service@demo.example",
+    "subject": "Important Notice: New login from unknown device",
+    "preview": "We noticed a login from Chrome on Windows in Seattle, WA. If this wasn't you, secure your account immediately.",
+    "time": "12:20 PM",
+    "trueType": "important"
+  },
+  {
+    "id": "email_19",
+    "sender": "DoorDash",
+    "senderEmail": "orders@demo.example",
+    "subject": "Order receipt from Ramen Nagi ($34.50)",
+    "preview": "Delivered to your address. Driver tip included. View detailed tax receipt and order summary.",
+    "time": "12:28 PM",
+    "trueType": "receipt"
+  },
+  {
+    "id": "email_20",
+    "sender": "Devon Miller (Lead Dev)",
+    "senderEmail": "devon@demo.example",
+    "subject": "PR #142 review comments: merge blocking question",
+    "preview": "Hey! Can you verify if the classification fallback handles network dropouts cleanly? Let me know once updated.",
+    "time": "12:35 PM",
+    "trueType": "needs_reply"
+  },
+  {
+    "id": "email_21",
+    "sender": "TLDR Web Dev",
+    "senderEmail": "dan@demo.example",
+    "subject": "React 19 adoption guide, CSS container queries, and Vite 6",
+    "preview": "A bite-sized 5-minute summary of the biggest front-end news, engineering blog posts, and open-source tools.",
+    "time": "12:45 PM",
+    "trueType": "newsletter"
+  },
+  {
+    "id": "email_22",
+    "sender": "MegaLottery International",
+    "senderEmail": "draw@demo.example",
+    "subject": "Official notification: Ticket #8491 selected for jackpot",
+    "preview": "Your email was drawn in our seasonal sweepstakes. Reply with your passport scan to verify payout identity.",
+    "time": "01:00 PM",
+    "trueType": "spam"
+  },
+  {
+    "id": "email_23",
+    "sender": "HR Benefits Team",
+    "senderEmail": "hr@demo.example",
+    "subject": "Action Required: Open Enrollment for Health Benefits",
+    "preview": "Annual benefits enrollment closes on Friday. Verify your dependents, 401k match, and dental coverage.",
+    "time": "01:15 PM",
+    "trueType": "important"
+  },
+  {
+    "id": "email_24",
+    "sender": "GitHub Billing",
+    "senderEmail": "billing@demo.example",
+    "subject": "Payment receipt for GitHub Copilot Pro ($10.00)",
+    "preview": "Thank you for using GitHub. Your monthly subscription has renewed successfully. Invoice #INV-89104.",
+    "time": "01:25 PM",
+    "trueType": "receipt"
+  },
+  {
+    "id": "email_25",
+    "sender": "Hacker Newsletter",
+    "senderEmail": "hn@demo.example",
+    "subject": "Show HN: Fast-paced inbox cleaner with arcade combat",
+    "preview": "Top discussions: building game loops over real chores, SQLite performance tricks, and hardware retro hacks.",
+    "time": "01:35 PM",
+    "trueType": "newsletter"
+  },
+  {
+    "id": "email_26",
+    "sender": "Discount Meds Online",
+    "senderEmail": "pharmacy@demo.example",
+    "subject": "Lowest prices on prescriptions - express overnight ship",
+    "preview": "Special discount code SAVE50. No prescription needed for popular brand supplements and medication.",
+    "time": "01:42 PM",
+    "trueType": "spam"
+  },
+  {
+    "id": "email_27",
+    "sender": "Landlord & Property Manager",
+    "senderEmail": "management@demo.example",
+    "subject": "Notice: Water shutoff for maintenance this Wednesday",
+    "preview": "Water supply in building B will be shut off between 10:00 AM and 1:00 PM for scheduled plumbing repairs.",
+    "time": "01:50 PM",
+    "trueType": "important"
+  },
+  {
+    "id": "email_28",
+    "sender": "AWS Billing",
+    "senderEmail": "no-reply@demo.example",
+    "subject": "Amazon Web Services Invoice Available ($48.12)",
+    "preview": "Your monthly AWS invoice for account 9401-2291 is ready. S3 storage and Lambda compute charges itemized.",
+    "time": "02:00 PM",
+    "trueType": "receipt"
+  },
+  {
+    "id": "email_29",
+    "sender": "Design Lead (Priya)",
+    "senderEmail": "priya@demo.example",
+    "subject": "Can you check the typography pairing for the arcade HUD?",
+    "preview": "Attached the retro pixel font spec for Press Start 2P. Does it look sharp at 14px on retina screens? Thoughts?",
+    "time": "02:10 PM",
+    "trueType": "needs_reply"
+  },
+  {
+    "id": "email_30",
+    "sender": "Figma Weekly Highlights",
+    "senderEmail": "newsletter@demo.example",
+    "subject": "What's new in Figma: Variables, auto-layout 5, & prototypes",
+    "preview": "Explore the latest community UI kits, dark mode arcade templates, and interactive component libraries.",
+    "time": "02:20 PM",
+    "trueType": "newsletter"
+  },
+  {
+    "id": "email_31",
+    "sender": "Phish Alert System (Sim)",
+    "senderEmail": "verify-account-now@demo.example",
+    "subject": "SECURITY SUSPENSION: Update your password in 1 hour",
+    "preview": "Failure to click this external link will result in permanent loss of your mailbox access and drive files.",
+    "time": "02:30 PM",
+    "trueType": "spam"
+  },
+  {
+    "id": "email_32",
+    "sender": "Internal Revenue Service (Notice)",
+    "senderEmail": "official-records@demo.example",
+    "subject": "Tax Year 2025: Form 1099 Electronic Filing Available",
+    "preview": "Your electronic wage and tax statement is ready for download in your secure payroll portal.",
+    "time": "02:40 PM",
+    "trueType": "important"
+  },
+  {
+    "id": "email_33",
+    "sender": "Apple Services",
+    "senderEmail": "no_reply@demo.example",
+    "subject": "Your receipt from Apple ($2.99 iCloud+ 200GB)",
+    "preview": "Order ID: MLY482910. iCloud+ storage plan renewed. Payment processed through Apple Pay.",
+    "time": "02:50 PM",
+    "trueType": "receipt"
+  },
+  {
+    "id": "email_34",
+    "sender": "Frontend Focus",
+    "senderEmail": "curator@demo.example",
+    "subject": "Building accessible arcade games with Web Audio & ARIA",
+    "preview": "Issue 628: Screen readers in canvas games, high-contrast dark themes, and reduced motion best practices.",
+    "time": "03:00 PM",
+    "trueType": "newsletter"
+  },
+  {
+    "id": "email_35",
+    "sender": "Nigerian Prince Trust",
+    "senderEmail": "barrister@demo.example",
+    "subject": "Confidential partnership proposal ($14.5 Million USD)",
+    "preview": "Seeking an honest overseas partner to receive dormant royal inheritance funds with 30% commission share.",
+    "time": "03:10 PM",
+    "trueType": "spam"
+  },
+  {
+    "id": "email_36",
+    "sender": "Apartment Lease Renewal",
+    "senderEmail": "leasing@demo.example",
+    "subject": "Lease Expiration Notice: 60-Day Renewal Option",
+    "preview": "Your current lease ends in 60 days. Please sign the renewal addendum or provide notice to vacate by Dec 1.",
+    "time": "03:20 PM",
+    "trueType": "important"
+  },
+  {
+    "id": "email_37",
+    "sender": "Steam Purchases",
+    "senderEmail": "noreply@demo.example",
+    "subject": "Thank you for your Steam purchase ($19.99)",
+    "preview": "You purchased: Retro Dungeon Arcade Edition. The game is now in your Steam Library and ready to play.",
+    "time": "03:30 PM",
+    "trueType": "receipt"
+  },
+  {
+    "id": "email_38",
+    "sender": "Next.js Weekly",
+    "senderEmail": "team@demo.example",
+    "subject": "Turbopack is now default in Next.js App Router",
+    "preview": "Read how the team reduced cold boot compile times by 76% across enterprise production builds.",
+    "time": "03:40 PM",
+    "trueType": "newsletter"
+  },
+  {
+    "id": "email_39",
+    "sender": "Car Insurance Special Offer",
+    "senderEmail": "quotes@demo.example",
+    "subject": "Drivers in your state could save $800 annually",
+    "preview": "Enter your zip code now to compare 40 auto insurance carriers and find instant budget rates.",
+    "time": "03:50 PM",
+    "trueType": "spam"
+  },
+  {
+    "id": "email_40",
+    "sender": "DevOps On-Call (PagerDuty)",
+    "senderEmail": "alerts@demo.example",
+    "subject": "CRITICAL: Database read latency spike > 500ms (us-east-1)",
+    "preview": "Service cluster production-db-primary exceeded error budget for 5 minutes. On-call escalation triggered.",
+    "time": "04:00 PM",
+    "trueType": "important"
+  }
+]
