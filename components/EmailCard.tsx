@@ -148,6 +148,7 @@ export const EmailCard: React.FC<EmailCardProps> = ({ email, nextEmails, onActio
                   color: meta.colorHex,
                   border: `1px solid ${meta.colorHex}55`,
                 }}
+                aria-label={`Tier: ${tier}`}
               >
                 {meta.badgeText}
               </span>

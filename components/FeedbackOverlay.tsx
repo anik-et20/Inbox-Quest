@@ -5,20 +5,19 @@ import { useGameStore } from "@/store/game";
 
 export const FeedbackOverlay: React.FC = () => {
   const { lastFeedback } = useGameStore();
-  const [visible, setVisible] = useState(false);
+  const [dismissedKey, setDismissedKey] = useState<number | null>(null);
 
   useEffect(() => {
     if (!lastFeedback.status) return;
-    setVisible(true);
 
     const timer = setTimeout(() => {
-      setVisible(false);
+      setDismissedKey(lastFeedback.key);
     }, 1100);
 
     return () => clearTimeout(timer);
   }, [lastFeedback.key, lastFeedback.status]);
 
-  if (!visible || !lastFeedback.status) return null;
+  if (!lastFeedback.status || dismissedKey === lastFeedback.key) return null;
 
   const isCorrect = lastFeedback.status === "correct";
 

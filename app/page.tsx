@@ -22,6 +22,10 @@ export default function Home() {
     processAction,
     setPhase,
     startGame,
+    score,
+    combo,
+    health,
+    lastFeedback,
   } = useGameStore();
 
   const [showLiveConfirmModal, setShowLiveConfirmModal] = useState(false);
@@ -84,6 +88,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#060b14] text-slate-100 font-sans selection:bg-cyan-500 selection:text-slate-950">
+      <a href="#game-main" className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-cyan-400 focus:px-4 focus:py-2 focus:text-slate-950">
+        Skip to game
+      </a>
       {/* 1. Top Mode Banner */}
       <div
         className={`w-full border-b py-1.5 px-4 text-center text-[11px] font-mono flex items-center justify-center gap-2 transition-colors ${banner.bg}`}
@@ -129,7 +136,7 @@ export default function Home() {
           </span>
         </div>
 
-        <div className="flex items-center gap-3">
+        <nav aria-label="Game navigation" className="flex items-center gap-3">
           {(session as { error?: string } | null)?.error && (
             <button
               type="button"
@@ -159,11 +166,11 @@ export default function Home() {
               Play
             </button>
           )}
-        </div>
+        </nav>
       </header>
 
       {/* 3. Main View Router */}
-      <main className="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 flex flex-col justify-center">
+      <main id="game-main" tabIndex={-1} className="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 flex flex-col justify-center">
         {phase === "landing" && <LandingPage />}
 
         {phase === "loading" && <LoadingScreen />}
@@ -220,6 +227,9 @@ export default function Home() {
       </main>
 
       <FeedbackOverlay />
+      <div aria-live="polite" className="sr-only">
+        {phase === "playing" ? `Score ${score}, combo x${combo}, health ${health} of 3${lastFeedback.message ? `. ${lastFeedback.message}` : ""}` : ""}
+      </div>
 
       {/* 4. Live Mode Confirmation Modal */}
       {showLiveConfirmModal && (

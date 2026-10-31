@@ -35,6 +35,13 @@ svg {
   vertical-align: middle;
 }
 
+button:focus-visible,
+a:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #67e8f9;
+  outline-offset: 2px;
+}
+
 @keyframes shake-anim {
   0%, 100% { transform: translateX(0); }
   25% { transform: translateX(-6px); }

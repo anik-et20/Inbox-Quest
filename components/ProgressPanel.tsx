@@ -58,7 +58,7 @@ export const ProgressPanel: React.FC = () => {
         </div>
 
         {/* Progress Bar */}
-        <div className="w-full bg-slate-800/80 rounded-full h-2 mt-3 overflow-hidden border border-slate-700/50">
+        <div className="w-full bg-slate-800/80 rounded-full h-2 mt-3 overflow-hidden border border-slate-700/50" role="progressbar" aria-label="Inbox progress" aria-valuemin={0} aria-valuemax={100} aria-valuenow={percentCleared}>
           <div
             className="bg-gradient-to-r from-cyan-500 via-teal-400 to-emerald-400 h-full rounded-full transition-all duration-500 shadow-[0_0_10px_rgba(45,212,191,0.5)]"
             style={{ width: `${percentCleared}%` }}

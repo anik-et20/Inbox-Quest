@@ -10,7 +10,6 @@ export const EndScreen: React.FC = () => {
     score,
     archivedCount,
     trashedCount,
-    keptCount,
     health,
     queue,
     log,
@@ -180,7 +179,7 @@ export const EndScreen: React.FC = () => {
               Reviewed {reviewedCount} / {initialTotal}
             </div>
 
-            <div className="w-full bg-slate-800 rounded-full h-2.5 mb-4 overflow-hidden">
+            <div className="w-full bg-slate-800 rounded-full h-2.5 mb-4 overflow-hidden" role="progressbar" aria-label="Emails cleared" aria-valuemin={0} aria-valuemax={initialTotal} aria-valuenow={totalCleared}>
               <div
                 className="bg-[#a3e635] h-full rounded-full shadow-[0_0_12px_rgba(163,230,53,0.7)]"
                 style={{ width: `${initialTotal ? Math.min(100, Math.round((totalCleared / initialTotal) * 100)) : 0}%` }}

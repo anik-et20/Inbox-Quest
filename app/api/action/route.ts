@@ -28,7 +28,7 @@ export async function POST(req: NextRequest) {
   try {
     const parsed = actionRequestSchema.safeParse(await req.json());
     if (!parsed.success) return jsonError("Invalid action request.", "INVALID_REQUEST", 400);
-    const { id, action, isLive, currentIndex } = parsed.data;
+    const { id, action, isLive } = parsed.data;
     const isDemo = id.startsWith("email_");
     const token = await getAuthenticatedToken(req);
     if (!isDemo && !token) return jsonError("Authentication is required.", "NO_TOKEN", 401);

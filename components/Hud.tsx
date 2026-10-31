@@ -128,7 +128,7 @@ export const Hud: React.FC<HudProps> = ({ onToggleLiveModal }) => {
           <div className="text-[10px] font-mono tracking-wider text-slate-400 uppercase">
             Health
           </div>
-          <div className="flex items-center gap-1.5 mt-1">
+          <div className="flex items-center gap-1.5 mt-1" aria-label={`${health} of 3 health`}>
             {[1, 2, 3].map((heartIndex) => {
               const isFilled = heartIndex <= health;
               return (
@@ -139,7 +139,7 @@ export const Hud: React.FC<HudProps> = ({ onToggleLiveModal }) => {
                       ? "text-pink-500 drop-shadow-[0_0_8px_rgba(244,63,94,0.8)] scale-100"
                       : "text-slate-700 opacity-40 scale-90"
                   }`}
-                  aria-label={isFilled ? "Heart" : "Lost heart"}
+                  aria-label={isFilled ? "Heart: available health" : "Heart: lost health"}
                 >
                   {isFilled ? "♥" : "♡"}
                 </span>

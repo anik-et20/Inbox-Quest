@@ -188,6 +188,24 @@ data/demo-emails.json           seeded fake inbox for Demo mode
 | Running on port 3001 | An old dev server is still running. Close it, or update `NEXTAUTH_URL` and the Google redirect URI |
 | Weird behavior after many edits | Stop the server, delete the `.next` folder, and run `npm run dev` again |
 
+## Testing
+
+The project uses Vitest with jsdom, Testing Library, and jest-axe.
+
+```bash
+npm test
+npm run test:watch
+npm run test:coverage
+npm run typecheck
+npm run lint
+```
+
+Tests cover tiering, rules pre-filtering, scoring/combo/ranks, validation,
+entity decoding, API authentication boundaries, Demo mode, and a landing-page
+accessibility smoke test. The current suite has 34 passing tests; the latest
+coverage run reports 24.6% overall, 32.4% for `lib/`, and 45.9% for `store/`.
+See [docs/TESTING.md](docs/TESTING.md) for the manual Demo checklist. |
+
 Testing-mode Google tokens expire after about 7 days, so sign in again before a demo.
 
 ---

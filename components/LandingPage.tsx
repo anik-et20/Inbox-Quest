@@ -167,14 +167,14 @@ export const LandingPage: React.FC = () => {
                   <EnemySprite type="newsletter" size={28} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-white text-sm">Amazon Deals</h3>
+                  <div className="font-bold text-white text-sm">Amazon Deals</div>
                   <p className="text-[11px] text-slate-400 font-mono">deals@demo.example • 10:42 AM</p>
                 </div>
               </div>
 
-              <h4 className="font-bold text-xs text-slate-200 mb-1">
+              <div className="font-bold text-xs text-slate-200 mb-1">
                 Your weekend deals just dropped
-              </h4>
+              </div>
               <p className="text-[11px] text-slate-400 leading-relaxed mb-4">
                 A fresh batch of home, tech and everyday finds. Take a peek at this week&#39;s top picks.
               </p>

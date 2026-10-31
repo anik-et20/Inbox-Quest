@@ -17,6 +17,8 @@ export const EnemySprite: React.FC<EnemySpriteProps> = ({ type, className = "", 
           height={size}
           viewBox="0 0 24 24"
           fill="currentColor"
+          role="img"
+          aria-label={`${type} email enemy`}
           className={`text-purple-400 drop-shadow-[0_0_12px_rgba(168,85,247,0.7)] ${className}`}
         >
           {/* Pixelated alien shape */}
@@ -32,6 +34,8 @@ export const EnemySprite: React.FC<EnemySpriteProps> = ({ type, className = "", 
           height={size}
           viewBox="0 0 28 28"
           fill="currentColor"
+          role="img"
+          aria-label={`${type} email enemy`}
           className={`text-pink-400 drop-shadow-[0_0_12px_rgba(236,72,153,0.7)] ${className}`}
         >
           {/* Cluster of 3 pixel bugs */}
@@ -52,6 +56,8 @@ export const EnemySprite: React.FC<EnemySpriteProps> = ({ type, className = "", 
           height={size}
           viewBox="0 0 24 24"
           fill="currentColor"
+          role="img"
+          aria-label={`${type} email enemy`}
           className={`text-emerald-400 drop-shadow-[0_0_14px_rgba(34,197,94,0.7)] ${className}`}
         >
           <path d="M11 1h2v3h-2V1zm-3 4h8v2H8V5zM5 8h14v2H5V8zm-2 3h18v2H3v-2zm2 3h14v2H5v-2zm3 3h8v2H8v-2zm3 3h2v3h-2v-3z" />
@@ -66,6 +72,8 @@ export const EnemySprite: React.FC<EnemySpriteProps> = ({ type, className = "", 
           height={size}
           viewBox="0 0 24 24"
           fill="currentColor"
+          role="img"
+          aria-label={`${type} email enemy`}
           className={`text-amber-400 drop-shadow-[0_0_12px_rgba(245,158,11,0.7)] ${className}`}
         >
           <path d="M3 4h18v4H3V4zm0 6h18v10H3V10zm8 2h2v4h-2v-4z" />
@@ -81,6 +89,8 @@ export const EnemySprite: React.FC<EnemySpriteProps> = ({ type, className = "", 
           height={size}
           viewBox="0 0 24 24"
           fill="currentColor"
+          role="img"
+          aria-label={`${type} email enemy`}
           className={`text-rose-400 drop-shadow-[0_0_14px_rgba(244,63,94,0.8)] ${className}`}
         >
           {/* Horns */}

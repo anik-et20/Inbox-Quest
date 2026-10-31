@@ -155,7 +155,6 @@ export const useGameStore = create<GameState>((set, get) => ({
       console.error("load: error", error);
       set({ loadError: error instanceof Error ? error.message : "Failed to load emails" });
     } finally {
-      const current = get();
       set({ loadProgress: 100, isLoading: false });
       if (rawEmails.length > 0) {
         set({ phase: "playing" });
@@ -351,7 +350,7 @@ export const useGameStore = create<GameState>((set, get) => ({
           log: s.log.map((l) => (l.id === logId ? { ...l, status: "confirmed", note: `Failed: ${res.error}` } : l)),
         }));
       }
-    } catch (err: unknown) {
+    } catch {
       set((s) => ({
         log: s.log.map((l) => (l.id === logId ? { ...l, status: "confirmed", note: "Retry failed" } : l)),
       }));
