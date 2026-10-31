@@ -8,6 +8,7 @@ import { decodeHtmlEntities } from "@/lib/text";
 import { getTier, recordSenderDisposition } from "@/lib/protection";
 import { scoreDecision } from "@/lib/scoring";
 import { MAX_ACTION_LOG_ITEMS } from "@/lib/constants";
+import { logger } from "@/lib/logger";
 
 export type GamePhase = "landing" | "loading" | "playing" | "ended" | "empty_inbox";
 export type InboxSource = "demo" | "gmail";
@@ -85,13 +86,13 @@ export const useGameStore = create<GameState>((set, get) => ({
   setQueue: (queue) => {
     const state = get();
     if (state.phase === "playing") {
-      console.warn("queue reset ignored while phase is playing");
+      logger.warn("queue reset ignored while phase is playing");
       return;
     }
     const uniqueQueue = [...new Map(queue.map((email) => [email.id, email])).values()]
       .filter((email) => !state.actedIds.has(email.id));
-    console.log("queue reset");
-    console.info(`[client] queue fetched ${queue.length}, unique count ${uniqueQueue.length}`);
+    logger.debug("queue reset");
+    logger.debug("client queue fetched", { fetched: queue.length, unique: uniqueQueue.length });
     set({ queue: uniqueQueue, currentIndex: 0 });
   },
   setLoadProgress: (loadProgress) => set({ loadProgress }),
@@ -107,7 +108,7 @@ export const useGameStore = create<GameState>((set, get) => ({
       loadProgress: 0,
       statusMessage: source === "gmail" ? "Fetching emails..." : "Scanning demo emails...",
     });
-    console.log("load: start");
+    logger.debug("load: start");
 
     let rawEmails: DemoEmail[] = [];
     try {
@@ -121,13 +122,13 @@ export const useGameStore = create<GameState>((set, get) => ({
             ...email,
             preview: decodeHtmlEntities(email.preview),
           }])).values()];
-          console.log(`load: fetched ${rawEmails.length}`);
+          logger.debug("load: fetched", { count: rawEmails.length });
         } finally {
           clearTimeout(timeoutId);
         }
       } else {
         rawEmails = demoEmails as ClassifiedEmail[];
-        console.log(`load: fetched ${rawEmails.length}`);
+        logger.debug("load: fetched", { count: rawEmails.length });
       }
 
       if (rawEmails.length === 0) {
@@ -139,7 +140,7 @@ export const useGameStore = create<GameState>((set, get) => ({
       const classified = await classifyEmails(
         rawEmails,
         (progress) => set({ loadProgress: progress }),
-        (index, total) => console.log(`load: classified batch ${index}/${total}`)
+        (index, total) => logger.debug("load: classified batch", { index, total })
       );
       const tierCounts = classified.reduce(
         (counts, email) => {
@@ -148,9 +149,9 @@ export const useGameStore = create<GameState>((set, get) => ({
         },
         { protected: 0, clutter: 0, uncertain: 0 } as Record<"protected" | "clutter" | "uncertain", number>
       );
-      console.log(`protected ${tierCounts.protected}, clutter ${tierCounts.clutter}, uncertain ${tierCounts.uncertain}`);
+      logger.debug("classification tiers", tierCounts);
       get().setQueue(classified);
-      console.log(`load: done -> playing`);
+      logger.debug("load: done -> playing");
     } catch (error) {
       console.error("load: error", error);
       set({ loadError: error instanceof Error ? error.message : "Failed to load emails" });
@@ -158,7 +159,7 @@ export const useGameStore = create<GameState>((set, get) => ({
       set({ loadProgress: 100, isLoading: false });
       if (rawEmails.length > 0) {
         set({ phase: "playing" });
-        console.log("load: done -> playing");
+        logger.debug("load: done -> playing");
       }
     }
   },
@@ -252,8 +253,7 @@ export const useGameStore = create<GameState>((set, get) => ({
       phase: isGameOver ? "ended" : "playing",
       actedIds: new Set([...state.actedIds, currentEmail.id]),
     });
-    console.log(`action: ${action} index ${state.currentIndex} -> ${nextIndex}`);
-    console.info(`[client] action=${action} id=${currentEmail.id} currentIndex=${nextIndex}`);
+    logger.debug("action completed", { action, currentIndex: nextIndex });
 
     // Run action in background (optimistic UI)
     (async () => {

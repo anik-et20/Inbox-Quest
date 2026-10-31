@@ -33,7 +33,7 @@ export async function GET(req: NextRequest) {
     const messages = (listRes.data.messages || []).filter((message) => message.id);
 
     if (messages.length === 0) {
-      console.info("[api/emails] emails fetched 0, unique count 0");
+      logger.debug("emails fetched", { count: 0, unique: 0 });
       rememberMessageIds(subjectFor(token), []);
       return NextResponse.json({ ok: true, code: "OK", emails: [] });
     }

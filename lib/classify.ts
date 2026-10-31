@@ -5,6 +5,7 @@ import { decodeHtmlEntities } from "./text";
 import { isRulePrefiltered } from "./protection";
 import { getTier } from "./protection";
 import { CLASSIFICATION_BATCH_SIZE } from "./constants";
+import { logger } from "./logger";
 
 interface RequestEmail {
   id: string;
@@ -106,7 +107,9 @@ export async function classifyBatch(
         }
       }
     } catch (err) {
-      console.warn("Classification batch call failed, using rule-based fallback:", err);
+      logger.warn("Classification batch call failed, using rule-based fallback", {
+        error: err instanceof Error ? err.message : "unknown",
+      });
     }
 
     completedCount += batch.length;

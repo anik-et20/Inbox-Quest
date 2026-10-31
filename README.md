@@ -4,9 +4,21 @@
 
 Inbox Quest is a fast-paced browser game where every unread email is an enemy card. Each decision you make (Archive, Keep, Trash) is a real inbox action, and a live "Real-World Progress" panel shows the chore actually getting done while you play.
 
+**Live demo:** deploy this project with `npm run build && npm run start`; no public
+deployment URL is committed to this repository.
+
 Built for **PromptWars x OUTLIER'2026** (Google for Developers, Build with AI).
 
 > **Challenge:** Build an experience where playing a fast-paced game or interactive story actually executes the real-world chore in the background.
+
+## Problem alignment
+
+Inbox Quest turns inbox cleanup into the game itself: the player decides which
+email enemy to keep, archive, or trash while the action runs in the background.
+Demo mode proves the game loop with fictitious mail; Gmail Dry Run previews the
+chore safely; Live mode executes recoverable archive/trash changes after
+explicit confirmation. The action log and end screen show honest per-mode
+counts, while Rewind supports recovery for the last change.
 
 ---
 

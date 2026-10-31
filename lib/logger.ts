@@ -1,4 +1,7 @@
 export const logger = {
+  debug(message: string, context?: Record<string, string | number>) {
+    if (process.env.NODE_ENV === "development") console.debug(message, context);
+  },
   info(message: string, context?: Record<string, string | number>) {
     console.info(message, context);
   },

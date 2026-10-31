@@ -4,6 +4,7 @@ import { EmailType } from "@/lib/types";
 import { classifyRequestSchema, classificationResponseSchema } from "@/lib/validation";
 import { checkRateLimit, getAuthenticatedToken, jsonError, subjectFor } from "@/lib/server-security";
 import { GROQ_FALLBACK_MODEL as DEFAULT_FALLBACK_MODEL, GROQ_PRIMARY_MODEL, GROQ_REQUEST_TIMEOUT_MS } from "@/lib/constants";
+import { logger } from "@/lib/logger";
 
 export const maxDuration = 60;
 export const dynamic = "force-dynamic";
@@ -129,17 +130,17 @@ ${JSON.stringify(
 
   try {
     const results = await classifyWithModel(primaryModel);
-    console.info(`classified with ${primaryModel}`);
+    logger.debug("classified with primary model");
     return NextResponse.json({ ok: true, code: "OK", results });
   } catch (primaryError) {
     console.error(`Groq primary model ${primaryModel} failed:`, primaryError);
     try {
       const results = await classifyWithModel(fallbackModel);
-      console.info(`classified with ${fallbackModel}`);
+      logger.debug("classified with fallback model");
       return NextResponse.json({ ok: true, code: "OK", results });
     } catch (fallbackError) {
       console.error(`Groq fallback model ${fallbackModel} failed:`, fallbackError);
-      console.info("fallback used");
+      logger.debug("classification fallback used");
       return NextResponse.json({ ok: false, error: "Groq classification failed", code: "GROQ_ERROR", fallback: true, results: [] }, { status: 503 });
     }
   }

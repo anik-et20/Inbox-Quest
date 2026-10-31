@@ -25,12 +25,16 @@ export async function POST(req: NextRequest) {
         message: `[DRY RUN] Undone ${originalAction}`,
       });
     }
-
-    if (!token || !isAllowedMessage(subjectFor(token), id)) {
-      return jsonError("This message is not authorized for the current inbox session.", "MESSAGE_NOT_ALLOWED", 403);
-    }
+    if (!token) return jsonError("Authentication is required for live rewind.", "NO_TOKEN", 401);
 
     const gmail = getGmailClient(token.accessToken as string, token.refreshToken as string | undefined);
+    if (!isAllowedMessage(subjectFor(token), id)) {
+      try {
+        await gmail.users.messages.get({ userId: "me", id, format: "minimal" });
+      } catch {
+        return jsonError("This message is not available in the signed-in mailbox.", "MESSAGE_NOT_ALLOWED", 403);
+      }
+    }
 
     if (originalAction === "archive") {
       // Undo archive = add INBOX label back

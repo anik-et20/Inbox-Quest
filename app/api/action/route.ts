@@ -49,16 +49,21 @@ export async function POST(req: NextRequest) {
         message: `[DRY RUN] Simulated ${action} on ${id}`,
       });
     }
+    if (!token) return jsonError("Authentication is required for live actions.", "NO_TOKEN", 401);
 
     // Live mode requires valid session & Gmail OAuth access token
-    if (!token || !isAllowedMessage(subjectFor(token), id)) {
-      return jsonError("This message is not authorized for the current inbox session.", "MESSAGE_NOT_ALLOWED", 403);
-    }
     if (action !== "archive" && action !== "trash" && action !== "keep") {
       return jsonError("Invalid live action.", "INVALID_REQUEST", 400);
     }
 
     const gmail = getGmailClient(token.accessToken as string, token.refreshToken as string | undefined);
+    if (!isAllowedMessage(subjectFor(token), id)) {
+      try {
+        await withTimeout(gmail.users.messages.get({ userId: "me", id, format: "minimal" }));
+      } catch {
+        return jsonError("This message is not available in the signed-in mailbox.", "MESSAGE_NOT_ALLOWED", 403);
+      }
+    }
 
     if (action === "archive") {
       // Archive = remove INBOX label
